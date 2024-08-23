@@ -1,0 +1,25 @@
+﻿@model IEnumerable<CRUD.Models.Department>
+
+@{
+    ViewData["Title"] = "Department List";
+}
+<a asp-controller="Department" asp-action="Create" class="btn btn-success">Add Department</a>
+<h2>Department List</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Department ID</th>
+            <th>Department Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var department in Model)
+        {
+            <tr>
+                <td>@department.DepartmentId</td>
+                <td>@department.DepartmentName</td>
+            </tr>
+        }
+    </tbody>
+</table>

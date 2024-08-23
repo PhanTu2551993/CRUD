@@ -1,0 +1,33 @@
+﻿
+@model CRUD.Models.Student;
+@{
+    ViewData["Title"] = "Student List";
+}
+
+<h2>Student List</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Student ID</th>
+            <th>Student Name</th>
+            <th>Student Email</th>
+            <th>Student Phone</th>
+            <th>Date of Birth</th>
+            <th>Department</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@student.StudentId</td>
+                <td>@student.StudentName</td>
+                <td>@student.StudentEmail</td>
+                <td>@student.StudentPhone</td>
+                <td>@student.Dob</td>
+                <td>@student.Department?.DepartmentName</td> <!-- Display Department Name -->
+            </tr>
+        }
+    </tbody>
+</table>

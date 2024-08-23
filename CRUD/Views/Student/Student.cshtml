@@ -1,0 +1,45 @@
+﻿@page
+@model CRUD.Models.Student
+@{
+    ViewData["Title"] = "Create Student";
+}
+
+<h2>Create Student</h2>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="StudentName" class="control-label"></label>
+        <input asp-for="StudentName" class="form-control" />
+        <span asp-validation-for="StudentName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="StudentEmail" class="control-label"></label>
+        <input asp-for="StudentEmail" class="form-control" />
+        <span asp-validation-for="StudentEmail" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="StudentPhone" class="control-label"></label>
+        <input asp-for="StudentPhone" class="form-control" />
+        <span asp-validation-for="StudentPhone" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Dob" class="control-label"></label>
+        <input asp-for="Dob" class="form-control" />
+        <span asp-validation-for="Dob" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="DepartmentId" class="control-label"></label>
+        <select asp-for="DepartmentId" class="form-control" asp-items="Model.Departments"></select>
+        <span asp-validation-for="DepartmentId" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
